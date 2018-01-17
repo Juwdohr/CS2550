@@ -6,7 +6,6 @@
   --serif: 'Roboto Slab', serif;
   --sans: 'Roboto', sans-serif;
 }
-
 * , *:before, *:after {
   box-sizing: border-box;
   margin: 0;
@@ -14,17 +13,26 @@
   font: 300 1em var(--sans);
 }
 
-.head {
+.link {
+  color: black;
+  text-decoration: none;
+}
+.link:hover {
+  color: -webkit-link;
+  text-decoration: underline;
+}
+
+.page-header {
   margin: 50px auto;
   text-align: center;
 }
-.head .title {
+.page-header .title {
   font: 100 1.5em var(--sans);
 }
-.head .subtitle {
+.page-header .subtitle {
   font: 700 2em var(--serif);
 }
-.head .subtitle + p {
+.page-header .subtitle + p {
   font: 100 italic .8em var(--sans);
 }
 
@@ -39,44 +47,51 @@
 
 .info {
   grid-column: 1;
-  grid-row: 1/8;
+  grid-row: 1/4;
 }
-
 .info h4 {
   font: 700 1.25em var(--serif);
 }
-
 .info p {
   margin: 1em auto;
 }
 
-figure.img,
-section.game-state {
+.state {
+  grid-column: 1;
+  grid-row: 4/8;
+}
+.state h4 {
+  font: 700 1.25em var(--serif);
+}
+.state p {
+  margin: 1em auto;
+}
+
+figure.img {
   border: 1px solid;
   padding: .2em;
 }
-figure.img {
+figure.figure1 {
   grid-row: 1/2;
   grid-column: 2;
 }
-section.game-state {
+figure.figure2 {
   grid-row: 2/3;
   grid-column: 2;
-}
-section.game-state .title {
-  font-weight: 700;
-  font-size: 1em:
 }
 figure.img img {
   border: 1px solid;
   width: 100%;
 }
-
 figure figcaption {
   text-align: center;
   font: 300 .75em var(--sans);
 }
-
 figure figcaption .title {
   font:100 italic .75em var(--serif);
+}
+
+code.initial-state {
+  font-family: monospace;
+  margin: 1em auto;
 }
