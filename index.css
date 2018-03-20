@@ -3,6 +3,7 @@
 :root {
   font-weight: 300;
   font-size: 16px;
+  line-height: 1.5em;
   --serif: 'Roboto Slab', serif;
   --sans: 'Roboto', sans-serif;
 }
@@ -89,9 +90,4 @@ figure figcaption {
 }
 figure figcaption .title {
   font:100 italic .75em var(--serif);
-}
-
-code.initial-state {
-  font-family: monospace;
-  margin: 1em auto;
 }

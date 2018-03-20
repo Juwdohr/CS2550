@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,700|Roboto:300,400,500');
+:root {
+  font-weight: 300;
+  font-size: 16px;
+  --serif: 'Roboto Slab', serif;
+  --sans: 'Roboto', sans-serif;
+}
+* , *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: 300 1rem var(--sans);
+}
+
+.page-header {
+  margin: 50px auto;
+  text-align: center;
+}
+.page-header .title {
+  font: 100 1.5em var(--sans);
+}
+.page-header .subtitle {
+  font: 700 2em var(--serif);
+}
+.page-header .subtitle + p {
+  font: 100 italic .8em var(--sans);
+}
+
+#root.sudoku {
+  width: 60%;
+  margin: 0 auto;
+}
+.main-grid {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+.main-grid tr > td {
+  border: 3px solid;
+}
+.top > td,
+.middle > td,
+.bottom > td {
+  border: 3px solid;
+}
+.top-left .sub-grid,
+.top-center .sub-grid,
+.top-right .sub-grid,
+.middle-left .sub-grid,
+.middle-center .sub-grid,
+.middle-right .sub-grid,
+.bottom-left .sub-grid,
+.bottom-center .sub-grid,
+.bottom-right .sub-grid {
+  width: 150px;
+  border-collapse: collapse;
+}
+
+.sub-grid .cell {
+  border: 3px solid grey;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+.sub-grid .cell {
+  font: 700 2em var(--serif);
+}
+.sub-grid .cell:hover:not(.initial) {
+  background: rgb(128,128,128);
+}
