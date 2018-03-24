@@ -1,16 +1,12 @@
-import board from './view.js';
-import { fillCell, cellClick } from './controller.js';
+import Grid from './sudoku.js';
+import Controller from './controller.js';
+import Model from './model.js';
+import View from './view.js';
 
-const root = document.getElementById('root');
+const grid = new Grid(document.getElementById('root'));
 
-const gameLayout = board();
-const cells = gameLayout.querySelectorAll('.cell');
-
-
-cells.forEach((cell, id) => fillCell(cell, id));
-cells.forEach((cell,id) =>
-  cell.addEventListener('click', cellClick.bind(this, cell, id))
-);
-
-
-root.append(gameLayout);
+(() => {
+  const model = new Model();
+  const controller = new Controller(model, grid);
+  const view = new View(controller);
+})();
