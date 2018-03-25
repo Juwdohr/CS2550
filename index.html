@@ -9,9 +9,21 @@
 </head>
 <body>
   <header class="page-header">
-    <h2 class="title">Web Programming 1</h2>
-    <h1 class="subtitle">Project: Sudoku</h1>
-    <p>By: Joshua A. Dix for UVU: CS2550</p>
+    <section class="headings">
+      <h2 class="title">Web Programming 1</h2>
+      <h1 class="subtitle">Project: Sudoku</h1>
+      <p>By: Joshua A. Dix for UVU: CS2550</p>
+    </section>
+    <section class="userlogin">
+      <div class="userInfo">
+        <span class="userInfo">
+          <input id="userName" type="text" name="userName" class="sm" placeholder="User Name" />
+          <input id="password" type="password" name="password" class="sm" placeholder="Password" />
+        </span>
+        <button type="submit" id="loginBtn" class="sm primary" >Login</button>
+      </div>
+      <span class="msg">User Name or Password Incorrect</span>
+    </section>
   </header>
   <main class="body">
     <section class="info">
@@ -33,5 +45,6 @@
       </figcaption>
     </figure>
   </main>
+  <script src="/login.js" charset="utf-8"></script>
 </body>
 </html>

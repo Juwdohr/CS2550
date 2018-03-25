@@ -6,6 +6,10 @@
   line-height: 1.5em;
   --serif: 'Roboto Slab', serif;
   --sans: 'Roboto', sans-serif;
+  --white: #fff;
+  --grey: #333;
+  --primaryBackground: #337ab7;
+  --primaryBorder: #2e6da4;
 }
 * , *:before, *:after {
   box-sizing: border-box;
@@ -23,18 +27,122 @@
   text-decoration: underline;
 }
 
+button {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  font: 400 .875rem var(--sans);
+  line-height: 1.42857143;
+  margin-bottom: 0;
+  padding: .375rem .75rem;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+button.sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+button.lg {
+    padding: .625rem 1rem;
+    font-size: 1.125rem;
+    line-height: 1.3333333;
+    border-radius: .375rem;
+}
+button.primary {
+    color: var(--white);
+    background: var(--primaryBackground);
+    border-color: var(--primaryBorder);
+}
+button.primary:hover {
+  color: var(--white);
+  background: #286090;
+  border-color: #204d74;
+}
+button.danger {
+  background: #d9534f;
+  border-color: ##d43f3a;
+  color: #fff;
+}
+button.danger:hover {
+  background: #c9302c;
+  border-color: #ac2925;
+  color: #fff;
+}
+button.default {
+  color: var(--grey);
+  background: var(--white);
+  border-color: #ccc;
+}
+button.default:hover {
+  color: var(--grey);
+  background: #e6e6e6;
+  border-color: #adadad;
+}
+button:hover {
+    color: #333;
+    text-decoration: none;
+}
+
 .page-header {
   margin: 50px auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.page-header .headings {
+  flex: 2 1 auto;
   text-align: center;
 }
-.page-header .title {
+.page-header .headings .title {
   font: 100 1.5em var(--sans);
 }
-.page-header .subtitle {
+.page-header .headings .subtitle {
   font: 700 2em var(--serif);
 }
-.page-header .subtitle + p {
+.page-header .headings .subtitle + p {
   font: 100 italic .8em var(--sans);
+}
+.page-header .userlogin {
+  padding-right: 50px;
+}
+.page-header .userlogin div.userInfo {
+  align-items: center;
+  display: flex;
+  font-size: 1em;
+  justify-content: space-between;
+  width: 100%;
+}
+.page-header .userlogin input {
+  border: 1px solid;
+  border-radius: 4px;
+  line-height: 1.42857143;
+  margin-right: 10px;
+  padding: .375em .75em;
+}
+.page-header .userlogin input.sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.page-header .userlogin input.lg {
+  padding: 6.25rem 1rem;
+  font-size: 1.125rem;
+  line-height: 1.3333333;
+  border-radius: .375rem;
+}
+.page-header .userlogin .msg {
+  font: 700 .8em var(--serif);
+  color: red;
+  display: none;
+}
+.page-header .userlogin .msg.active {
+  display: initial;
 }
 
 .body {

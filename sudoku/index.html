@@ -8,14 +8,31 @@
   <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-  <main class="wrapper">
-      <header class="page-header">
-        <h2 class="title">Web Programming 1</h2>
-        <h1 class="subtitle">Project: Sudoku</h1>
-        <p>By: Joshua A. Dix for UVU: CS2550</p>
-      </header>
-      <section id="root" class="sudoku"></section>
-  </main>
-  <script src="./index.js" charset="utf-8"></script>
+  <header class="page-header">
+    <div class="headings">
+      <h2 class="title">Web Programming 1</h2>
+      <h1 class="subtitle">Project: Sudoku</h1>
+      <p>By: Joshua A. Dix for UVU: CS2550</p>
+    </div>
+    <div class="user-display">
+      <span id='user'></span>
+      <p>Logged in on
+        <span id="timestamp"></span>
+      </p>
+      <button id="clr" class="sm danger">Clear Storage</button>
+    </div>
+  </header>
+  <main id="root"></main>
+  <footer>
+    <div class="ctrls-grp">
+      <div class="ctrl-timer">Time:
+        <span class="time">00:00:00</span>
+      </div>
+      <button class="ctrl-new">New Game</button>
+      <button class="ctrl-check">Check</button>
+      <button class="ctrl-clear">Clear</button>
+    </div>
+  </footer>
+  <script src="./js/index.js" type="module"></script>
 </body>
 </html>

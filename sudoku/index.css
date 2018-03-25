@@ -1,70 +1,180 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,700|Roboto:300,400,500');
+
 :root {
   font-weight: 300;
   font-size: 16px;
+  line-height: 1.5em;
   --serif: 'Roboto Slab', serif;
   --sans: 'Roboto', sans-serif;
+  --white: #fff;
+  --grey: #333;
+  --primaryBackground: #337ab7;
+  --primaryBorder: #2e6da4;
 }
 * , *:before, *:after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font: 300 1rem var(--sans);
+  font: 300 1em var(--sans);
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+.link:hover {
+  color: -webkit-link;
+  text-decoration: underline;
+}
+
+button {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  font: 400 .875rem var(--sans);
+  line-height: 1.42857143;
+  margin-bottom: 0;
+  padding: .375rem .75rem;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+button.sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+button.lg {
+    padding: .625rem 1rem;
+    font-size: 1.125rem;
+    line-height: 1.3333333;
+    border-radius: .375rem;
+}
+button.primary {
+    color: var(--white);
+    background: var(--primaryBackground);
+    border-color: var(--primaryBorder);
+}
+button.primary:hover {
+  color: var(--white);
+  background: #286090;
+  border-color: #204d74;
+}
+button.danger {
+  background: #d9534f;
+  border-color: #d43f3a;
+  color: #fff;
+}
+button.danger:hover {
+  background: #c9302c;
+  border-color: #ac2925;
+  color: #fff;
+}
+button.default {
+  color: var(--grey);
+  background: var(--white);
+  border-color: #ccc;
+}
+button.default:hover {
+  color: var(--grey);
+  background: #e6e6e6;
+  border-color: #adadad;
+}
+button:hover {
+    color: #333;
+    text-decoration: none;
 }
 
 .page-header {
   margin: 50px auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.page-header .headings {
   text-align: center;
 }
-.page-header .title {
+.page-header .headings .title {
   font: 100 1.5em var(--sans);
 }
-.page-header .subtitle {
+.page-header .headings .subtitle {
   font: 700 2em var(--serif);
 }
-.page-header .subtitle + p {
+.page-header .headings .subtitle + p {
   font: 100 italic .8em var(--sans);
 }
-
-#root.sudoku {
-  width: 60%;
-  margin: 0 auto;
+.page-header .user-display {
+  display: flex;
+  flex-flow:column;
+  align-items: flex-end;
 }
-.main-grid {
+.page-header .user-display #user {
+
+}
+
+table.main-grid {
   margin: 0 auto;
   border-collapse: collapse;
 }
-.main-grid tr > td {
+.main-grid > tr > td {
   border: 3px solid;
-}
-.top > td,
-.middle > td,
-.bottom > td {
-  border: 3px solid;
-}
-.top-left .sub-grid,
-.top-center .sub-grid,
-.top-right .sub-grid,
-.middle-left .sub-grid,
-.middle-center .sub-grid,
-.middle-right .sub-grid,
-.bottom-left .sub-grid,
-.bottom-center .sub-grid,
-.bottom-right .sub-grid {
-  width: 150px;
-  border-collapse: collapse;
 }
 
-.sub-grid .cell {
+.subgrid {
+  border-collapse: collapse;
+}
+.subgrid td.cell {
+  position: relative;
   border: 3px solid grey;
   height: 50px;
   width: 50px;
   text-align: center;
   vertical-align: middle;
-}
-.sub-grid .cell {
   font: 700 2em var(--serif);
 }
-.sub-grid .cell:hover:not(.initial) {
-  background: rgb(128,128,128);
+.subgrid .cell.active {
+  background: rgba(128,128,128,0.7);
+}
+.subgrid .cell:not(.initial){
+  color: blue;
+}
+.subgrid .cell:hover:not(.initial) {
+  background: rgba(128,128,128,.4);
+}
+
+.ctrls-grp {
+  margin: 0 auto 50px;
+  width: 471px;
+  border: 3px solid transparent;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(0, 150, 150);
+}
+.ctrls-grp > * {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+}
+.ctrls-grp > *:not(:last-child) {
+  border-right: 3px solid;
+}
+.ctrls-grp > .ctrl-timer {
+  text-align: center;
+}
+.ctrls-grp > button:hover {
+  background: rgba(128,128,128,.5);
+}
+
+input.cell-input {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  border: 3px solid black;
+  border-radius: 5px;
 }
